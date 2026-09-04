@@ -4,71 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ali Alhamwi | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <style type="text/tailwindcss">
+      @layer base {
+        html[dir="rtl"] body {
+          @apply font-arabic;
+        }
+        html[dir="ltr"] body {
+          @apply font-english;
+        }
+        body {
+          @apply bg-dark-900 text-white;
+        }
+      }
+
+      @layer components {
+        .btn-primary {
+          @apply px-6 py-3 rounded-lg bg-neon text-dark-900 font-semibold transition duration-300 hover:scale-105;
+          box-shadow: 0 0 0 rgba(34, 211, 238, 0);
+        }
+        .btn-primary:hover {
+          box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+        }
+
+        .card {
+          @apply bg-dark-800 border border-dark-700 rounded-xl p-6 transition duration-300;
+        }
+        .card:hover {
+          @apply border-neon;
+          box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+        }
+
+        .skill-badge {
+          @apply px-4 py-2 rounded-full bg-dark-800 border border-dark-700 text-gray-300 transition duration-300;
+        }
+        .skill-badge:hover {
+          @apply border-neon text-neon;
+        }
+
+        .section-heading {
+          @apply text-3xl md:text-4xl font-bold text-white mb-2;
+        }
+        .section-underline {
+          @apply w-12 h-1 bg-neon rounded mb-6;
+        }
+
+        .nav-link {
+          @apply text-gray-300 hover:text-neon transition duration-300;
+        }
+      }
+    </style>
   </head>
   <body>
 
     <!-- Nav -->
-    <nav>
-      <ul>
-        <li><a href="#home" data-i18n="nav.home"></a></li>
-        <li><a href="#about" data-i18n="nav.about"></a></li>
-        <li><a href="#skills" data-i18n="nav.skills"></a></li>
-        <li><a href="#projects" data-i18n="nav.projects"></a></li>
-        <li><a href="#contact" data-i18n="nav.contact"></a></li>
+    <nav class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur border-b border-dark-700 px-6 py-4 flex items-center justify-between">
+      <ul class="flex gap-6 rtl:space-x-reverse">
+        <li><a href="#home" data-i18n="nav.home" class="nav-link"></a></li>
+        <li><a href="#about" data-i18n="nav.about" class="nav-link"></a></li>
+        <li><a href="#skills" data-i18n="nav.skills" class="nav-link"></a></li>
+        <li><a href="#projects" data-i18n="nav.projects" class="nav-link"></a></li>
+        <li><a href="#contact" data-i18n="nav.contact" class="nav-link"></a></li>
       </ul>
-      <button id="lang-toggle">EN</button>
+      <button id="lang-toggle" class="skill-badge text-sm">EN</button>
     </nav>
 
     <!-- Hero -->
-    <section id="home">
-      <h1 data-i18n="hero.name"></h1>
-      <p data-i18n="hero.title"></p>
-      <a href="#projects" data-i18n="hero.cta"></a>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+      <h1 data-i18n="hero.name" class="text-4xl md:text-6xl font-bold mb-4"></h1>
+      <p data-i18n="hero.title" class="text-lg md:text-xl text-gray-400 max-w-2xl mb-8"></p>
+      <a href="#projects" data-i18n="hero.cta" class="btn-primary"></a>
     </section>
 
     <!-- About -->
-    <section id="about">
-      <h2 data-i18n="about.heading"></h2>
-      <p data-i18n="about.text"></p>
+    <section id="about" class="py-20 px-6 max-w-4xl mx-auto">
+      <h2 data-i18n="about.heading" class="section-heading"></h2>
+      <span class="section-underline block"></span>
+      <p data-i18n="about.text" class="text-gray-400 leading-relaxed"></p>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-      <h2 data-i18n="skills.heading"></h2>
-      <div class="skills-list">
-        <span>Laravel</span>
-        <span>PHP</span>
-        <span>React</span>
-        <span>JavaScript</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Node.js</span>
-        <span>Next.js</span>
-        <span>Express</span>
-        <span>MongoDB</span>
-        <span>TypeScript</span>
-        <span>MySQL</span>
+    <section id="skills" class="py-20 px-6 max-w-4xl mx-auto">
+      <h2 data-i18n="skills.heading" class="section-heading"></h2>
+      <span class="section-underline block"></span>
+      <div class="skills-list flex flex-wrap gap-3">
+        <span class="skill-badge">Laravel</span>
+        <span class="skill-badge">PHP</span>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+        <span class="skill-badge">Node.js</span>
+        <span class="skill-badge">Next.js</span>
+        <span class="skill-badge">Express</span>
+        <span class="skill-badge">MongoDB</span>
+        <span class="skill-badge">TypeScript</span>
+        <span class="skill-badge">MySQL</span>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects">
-      <h2 data-i18n="projects.heading"></h2>
-      <p data-i18n="projects.subheading"></p>
-      <!-- بطاقات المشاريع رح تنضاف بالمرحلة 6 -->
+    <section id="projects" class="py-20 px-6 max-w-4xl mx-auto">
+      <h2 data-i18n="projects.heading" class="section-heading"></h2>
+      <p data-i18n="projects.subheading" class="text-gray-400 mb-6"></p>
+      <!-- بطاقات المشاريع رح تنضاف بالمرحلة 6، كل بطاقة رح تاخد class="card" -->
     </section>
 
     <!-- Contact -->
-    <section id="contact">
-      <h2 data-i18n="contact.heading"></h2>
-      <p data-i18n="contact.text"></p>
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+      <h2 data-i18n="contact.heading" class="section-heading"></h2>
+      <span class="section-underline block mx-auto"></span>
+      <p data-i18n="contact.text" class="text-gray-400 mb-8"></p>
 
-      <a href="mailto:your-email@gmail.com" data-i18n="contact.email"></a>
-      <a href="https://linkedin.com/in/your-profile" data-i18n="contact.linkedin"></a>
-      <a href="https://github.com/ALI2ALHMWI" data-i18n="contact.github"></a>
-      <a href="https://gitlab.com/your-profile" data-i18n="contact.gitlab"></a>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:ali.alhamwi.256@gmail.com" data-i18n="contact.email" class="skill-badge"></a>
+        <a href="https://www.linkedin.com/in/ali-alhamwi-72a00a225/" data-i18n="contact.linkedin" class="skill-badge" target="_blank" rel="noopener"></a>
+        <a href="https://github.com/ALI2ALHMWI" data-i18n="contact.github" class="skill-badge" target="_blank" rel="noopener"></a>
+        <a href="https://gitlab.com/Ali-Alhamwi" data-i18n="contact.gitlab" class="skill-badge" target="_blank" rel="noopener"></a>
+      </div>
     </section>
 
     <script src="js/main.js"></script>
