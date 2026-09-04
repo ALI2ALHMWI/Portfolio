@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Ali Alhamwi",
+    "title": "Software Engineer | PHP & Laravel | Backend & REST APIs | MySQL | React | Full-Stack Development",
+    "cta": "View My Work"
+  },
+  "about": {
+    "heading": "About Me",
+    "text": "Software Engineer specializing in PHP, Laravel, and full-stack web development. I build and maintain production-ready backend systems and REST APIs, with hands-on experience across three live Laravel + Filament applications. I also work with React, JavaScript, and modern frontend tools to create complete, responsive web experiences."
+  },
+  "skills": {
+    "heading": "Skills"
+  },
+  "projects": {
+    "heading": "Projects",
+    "subheading": "A selection of production applications I've built and maintained."
+  },
+  "contact": {
+    "heading": "Get In Touch",
+    "text": "Feel free to reach out — I'm always open to discussing new projects and opportunities.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "gitlab": "GitLab"
+  }
+}

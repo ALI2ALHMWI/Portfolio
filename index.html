@@ -1,12 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ali Alhamwi | Portfolio</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-</body>
+  </head>
+  <body>
+
+    <!-- Nav -->
+    <nav>
+      <ul>
+        <li><a href="#home" data-i18n="nav.home"></a></li>
+        <li><a href="#about" data-i18n="nav.about"></a></li>
+        <li><a href="#skills" data-i18n="nav.skills"></a></li>
+        <li><a href="#projects" data-i18n="nav.projects"></a></li>
+        <li><a href="#contact" data-i18n="nav.contact"></a></li>
+      </ul>
+      <button id="lang-toggle">EN</button>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home">
+      <h1 data-i18n="hero.name"></h1>
+      <p data-i18n="hero.title"></p>
+      <a href="#projects" data-i18n="hero.cta"></a>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 data-i18n="about.heading"></h2>
+      <p data-i18n="about.text"></p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 data-i18n="skills.heading"></h2>
+      <div class="skills-list">
+        <span>Laravel</span>
+        <span>PHP</span>
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Node.js</span>
+        <span>Next.js</span>
+        <span>Express</span>
+        <span>MongoDB</span>
+        <span>TypeScript</span>
+        <span>MySQL</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 data-i18n="projects.heading"></h2>
+      <p data-i18n="projects.subheading"></p>
+      <!-- بطاقات المشاريع رح تنضاف بالمرحلة 6 -->
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 data-i18n="contact.heading"></h2>
+      <p data-i18n="contact.text"></p>
+
+      <a href="mailto:your-email@gmail.com" data-i18n="contact.email"></a>
+      <a href="https://linkedin.com/in/your-profile" data-i18n="contact.linkedin"></a>
+      <a href="https://github.com/ALI2ALHMWI" data-i18n="contact.github"></a>
+      <a href="https://gitlab.com/your-profile" data-i18n="contact.gitlab"></a>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
