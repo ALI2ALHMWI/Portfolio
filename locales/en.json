@@ -16,7 +16,10 @@
     "text": "Software Engineer specializing in PHP, Laravel, and full-stack web development. I build and maintain production-ready backend systems and REST APIs, with hands-on experience across three live Laravel + Filament applications. I also work with React, JavaScript, and modern frontend tools to create complete, responsive web experiences."
   },
   "skills": {
-    "heading": "Skills"
+    "heading": "Skills",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "database": "Database"
   },
   "projects": {
     "heading": "Projects",
