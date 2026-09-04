@@ -6,8 +6,11 @@
     <title>Ali Alhamwi | Portfolio</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -61,27 +64,100 @@
           @apply text-gray-300 hover:text-neon transition duration-300;
         }
       }
+      @layer utilities {
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out both;
+        }
+
+        @keyframes blob {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -20px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-fade-in-up,
+          .animate-blob {
+            animation: none !important;
+          }
+        }
+      }
     </style>
   </head>
   <body>
-
     <!-- Nav -->
-    <nav class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur border-b border-dark-700 px-6 py-4 flex items-center justify-between">
+    <nav
+      class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur border-b border-dark-700 px-6 py-4 flex items-center justify-between"
+    >
       <ul class="flex gap-6 rtl:space-x-reverse">
         <li><a href="#home" data-i18n="nav.home" class="nav-link"></a></li>
         <li><a href="#about" data-i18n="nav.about" class="nav-link"></a></li>
         <li><a href="#skills" data-i18n="nav.skills" class="nav-link"></a></li>
-        <li><a href="#projects" data-i18n="nav.projects" class="nav-link"></a></li>
-        <li><a href="#contact" data-i18n="nav.contact" class="nav-link"></a></li>
+        <li>
+          <a href="#projects" data-i18n="nav.projects" class="nav-link"></a>
+        </li>
+        <li>
+          <a href="#contact" data-i18n="nav.contact" class="nav-link"></a>
+        </li>
       </ul>
       <button id="lang-toggle" class="skill-badge text-sm">EN</button>
     </nav>
 
     <!-- Hero -->
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
-      <h1 data-i18n="hero.name" class="text-4xl md:text-6xl font-bold mb-4"></h1>
-      <p data-i18n="hero.title" class="text-lg md:text-xl text-gray-400 max-w-2xl mb-8"></p>
-      <a href="#projects" data-i18n="hero.cta" class="btn-primary"></a>
+    <section
+      id="home"
+      class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 overflow-hidden"
+    >
+      <!-- Animated background glow -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          class="absolute w-96 h-96 bg-neon/20 rounded-full blur-3xl top-1/4 -left-20 animate-blob"
+        ></div>
+        <div
+          class="absolute w-96 h-96 bg-neon/10 rounded-full blur-3xl bottom-1/4 -right-20 animate-blob animation-delay-2000"
+        ></div>
+      </div>
+
+      <h1
+        data-i18n="hero.name"
+        class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up"
+        style="animation-delay: 0.1s"
+      ></h1>
+      <p
+        id="hero-title"
+        data-i18n="hero.title"
+        class="text-lg md:text-xl text-gray-400 max-w-2xl mb-8 min-h-[3.5rem]"
+      ></p>
+      <a
+        href="#projects"
+        id="hero-cta"
+        data-i18n="hero.cta"
+        class="btn-primary"
+        style="opacity: 0"
+      ></a>
     </section>
 
     <!-- About -->
@@ -125,10 +201,32 @@
       <p data-i18n="contact.text" class="text-gray-400 mb-8"></p>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="mailto:ali.alhamwi.256@gmail.com" data-i18n="contact.email" class="skill-badge"></a>
-        <a href="https://www.linkedin.com/in/ali-alhamwi-72a00a225/" data-i18n="contact.linkedin" class="skill-badge" target="_blank" rel="noopener"></a>
-        <a href="https://github.com/ALI2ALHMWI" data-i18n="contact.github" class="skill-badge" target="_blank" rel="noopener"></a>
-        <a href="https://gitlab.com/Ali-Alhamwi" data-i18n="contact.gitlab" class="skill-badge" target="_blank" rel="noopener"></a>
+        <a
+          href="mailto:ali.alhamwi.256@gmail.com"
+          data-i18n="contact.email"
+          class="skill-badge"
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/ali-alhamwi-72a00a225/"
+          data-i18n="contact.linkedin"
+          class="skill-badge"
+          target="_blank"
+          rel="noopener"
+        ></a>
+        <a
+          href="https://github.com/ALI2ALHMWI"
+          data-i18n="contact.github"
+          class="skill-badge"
+          target="_blank"
+          rel="noopener"
+        ></a>
+        <a
+          href="https://gitlab.com/Ali-Alhamwi"
+          data-i18n="contact.gitlab"
+          class="skill-badge"
+          target="_blank"
+          rel="noopener"
+        ></a>
       </div>
     </section>
 
