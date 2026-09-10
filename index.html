@@ -100,6 +100,19 @@
           opacity: 1;
           transform: translateY(0);
         }
+        #mobile-menu.menu-open {
+          max-height: 20rem;
+        }
+
+        #menu-toggle.menu-open .menu-bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        #menu-toggle.menu-open .menu-bar:nth-child(2) {
+          opacity: 0;
+        }
+        #menu-toggle.menu-open .menu-bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
         @keyframes fade-in-up {
           from {
             opacity: 0;
@@ -145,20 +158,68 @@
   <body>
     <!-- Nav -->
     <nav
-      class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur border-b border-dark-700 px-6 py-4 flex items-center justify-between"
+      class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur border-b border-dark-700 px-6 py-4"
     >
-      <ul class="flex gap-6 rtl:space-x-reverse">
-        <li><a href="#home" data-i18n="nav.home" class="nav-link"></a></li>
-        <li><a href="#about" data-i18n="nav.about" class="nav-link"></a></li>
-        <li><a href="#skills" data-i18n="nav.skills" class="nav-link"></a></li>
+      <div class="flex items-center justify-between">
+        <ul class="hidden md:flex gap-6 rtl:space-x-reverse">
+          <li><a href="#home" data-i18n="nav.home" class="nav-link"></a></li>
+          <li><a href="#about" data-i18n="nav.about" class="nav-link"></a></li>
+          <li>
+            <a href="#skills" data-i18n="nav.skills" class="nav-link"></a>
+          </li>
+          <li>
+            <a href="#projects" data-i18n="nav.projects" class="nav-link"></a>
+          </li>
+          <li>
+            <a href="#contact" data-i18n="nav.contact" class="nav-link"></a>
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 md:order-2">
+          <button id="lang-toggle" class="skill-badge text-sm">EN</button>
+          <button
+            id="menu-toggle"
+            class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span
+              class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"
+            ></span>
+            <span
+              class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"
+            ></span>
+            <span
+              class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"
+            ></span>
+          </button>
+        </div>
+      </div>
+
+      <ul
+        id="mobile-menu"
+        class="md:hidden flex flex-col gap-4 mt-4 pt-4 border-t border-dark-700 max-h-0 overflow-hidden transition-all duration-300"
+      >
         <li>
-          <a href="#projects" data-i18n="nav.projects" class="nav-link"></a>
+          <a href="#home" data-i18n="nav.home" class="nav-link block"></a>
         </li>
         <li>
-          <a href="#contact" data-i18n="nav.contact" class="nav-link"></a>
+          <a href="#about" data-i18n="nav.about" class="nav-link block"></a>
+        </li>
+        <li>
+          <a href="#skills" data-i18n="nav.skills" class="nav-link block"></a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            data-i18n="nav.projects"
+            class="nav-link block"
+          ></a>
+        </li>
+        <li>
+          <a href="#contact" data-i18n="nav.contact" class="nav-link block"></a>
         </li>
       </ul>
-      <button id="lang-toggle" class="skill-badge text-sm">EN</button>
     </nav>
 
     <!-- Hero -->
@@ -283,21 +344,25 @@
               <img
                 src="assets/images/projects/milano-2.png"
                 alt="Milano project screenshot 1"
+                loading="eager" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/milano-3.png"
                 alt="Milano project screenshot 2"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/milano-4.png"
                 alt="Milano project screenshot 3"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/milano-1.png"
                 alt="Milano project screenshot 4"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
             </div>
@@ -344,21 +409,25 @@
               <img
                 src="assets/images/projects/zakaria-1.png"
                 alt="Zakaria project screenshot 1"
+                loading="eager" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/zakaria-2.png"
                 alt="Zakaria project screenshot 2"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/zakaria-3.png"
                 alt="Zakaria project screenshot 3"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/zakaria-4.png"
                 alt="Zakaria project screenshot 4"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
             </div>
@@ -405,31 +474,37 @@
               <img
                 src="assets/images/projects/Hebar-1.png"
                 alt="HEBRA project screenshot 1"
+                loading="eager" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/Hebar-2.png"
                 alt="HEBRA project screenshot 2"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
               <img
                 src="assets/images/projects/Hebar-3.png"
                 alt="HEBRA project screenshot 3"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
-               <img
+              <img
                 src="assets/images/projects/Hebar-4.png"
                 alt="HEBRA project screenshot 4"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
-               <img
+              <img
                 src="assets/images/projects/Hebar-5.png"
                 alt="HEBRA project screenshot 5"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
-               <img
+              <img
                 src="assets/images/projects/Hebar-6.png"
                 alt="HEBRA project screenshot 6"
+                loading="lazy" decoding="async"
                 class="w-full h-full object-cover flex-shrink-0"
               />
             </div>
@@ -465,26 +540,48 @@
           ></a>
         </div>
         <!-- Project: Law Firm Management System -->
-<div class="card project-card">
-  <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700 flex flex-col items-center justify-center gap-2 border border-dark-700">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-neon/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-    </svg>
-    <span class="text-xs text-gray-500" data-i18n="projects.confidential"></span>
-  </div>
+        <div class="card project-card">
+          <div
+            class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700 flex flex-col items-center justify-center gap-2 border border-dark-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-neon/70"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
+            <span
+              class="text-xs text-gray-500"
+              data-i18n="projects.confidential"
+            ></span>
+          </div>
 
-  <h3 data-i18n="projects.items.lawfirm.title" class="text-xl font-semibold mb-2"></h3>
-  <p data-i18n="projects.items.lawfirm.description" class="text-gray-400 text-sm leading-relaxed mb-4"></p>
+          <h3
+            data-i18n="projects.items.lawfirm.title"
+            class="text-xl font-semibold mb-2"
+          ></h3>
+          <p
+            data-i18n="projects.items.lawfirm.description"
+            class="text-gray-400 text-sm leading-relaxed mb-4"
+          ></p>
 
-  <div class="flex flex-wrap gap-2">
-    <span class="tech-tag">Laravel</span>
-    <span class="tech-tag">Livewire</span>
-    <span class="tech-tag">Blade</span>
-    <span class="tech-tag">MySQL</span>
-    <span class="tech-tag">Google Drive API</span>
-    <span class="tech-tag">Roles & Permissions</span>
-  </div>
-</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">Livewire</span>
+            <span class="tech-tag">Blade</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Google Drive API</span>
+            <span class="tech-tag">Roles & Permissions</span>
+          </div>
+        </div>
       </div>
     </section>
 

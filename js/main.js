@@ -152,3 +152,24 @@ function initProjectCarousels() {
 }
 
 document.addEventListener("DOMContentLoaded", initProjectCarousels);
+function initMobileMenu() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (!menuToggle || !mobileMenu) return;
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("menu-open");
+    menuToggle.classList.toggle("menu-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("menu-open");
+      menuToggle.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initMobileMenu);
