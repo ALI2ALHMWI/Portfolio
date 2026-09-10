@@ -63,6 +63,30 @@
         .nav-link {
           @apply text-gray-300 hover:text-neon transition duration-300;
         }
+        .tech-tag {
+          @apply px-3 py-1 text-xs rounded-full bg-dark-700 text-gray-300 border border-dark-700;
+        }
+
+        .carousel-prev,
+        .carousel-next {
+          @apply absolute top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-900/70 text-white text-lg hover:bg-neon hover:text-dark-900 transition;
+        }
+        .carousel-prev {
+          left: 0.5rem;
+        }
+        .carousel-next {
+          right: 0.5rem;
+        }
+
+        .carousel-dots {
+          @apply absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5;
+        }
+        .carousel-dot {
+          @apply w-2 h-2 rounded-full bg-white/40 transition;
+        }
+        .carousel-dot-active {
+          @apply bg-neon w-4;
+        }
       }
       @layer utilities {
         .reveal {
@@ -240,10 +264,228 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="py-20 px-6 max-w-4xl mx-auto">
+    <
+    <section id="projects" class="reveal py-20 px-6 max-w-5xl mx-auto">
       <h2 data-i18n="projects.heading" class="section-heading"></h2>
-      <p data-i18n="projects.subheading" class="text-gray-400 mb-6"></p>
-      <!-- بطاقات المشاريع رح تنضاف بالمرحلة 6، كل بطاقة رح تاخد class="card" -->
+      <span class="section-underline block"></span>
+      <p data-i18n="projects.subheading" class="text-gray-400 mb-10"></p>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- Project: Milano -->
+        <div class="card project-card">
+          <div
+            class="project-carousel relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700"
+            dir="ltr"
+          >
+            <div
+              class="carousel-track flex h-full transition-transform duration-500 ease-in-out"
+            >
+              <img
+                src="assets/images/projects/milano-2.png"
+                alt="Milano project screenshot 1"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/milano-3.png"
+                alt="Milano project screenshot 2"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/milano-4.png"
+                alt="Milano project screenshot 3"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/milano-1.png"
+                alt="Milano project screenshot 4"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+            </div>
+            <button class="carousel-prev" aria-label="Previous image">‹</button>
+            <button class="carousel-next" aria-label="Next image">›</button>
+            <div class="carousel-dots"></div>
+          </div>
+
+          <h3
+            data-i18n="projects.items.milano.title"
+            class="text-xl font-semibold mb-2"
+          ></h3>
+          <p
+            data-i18n="projects.items.milano.description"
+            class="text-gray-400 text-sm leading-relaxed mb-4"
+          ></p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">Filament</span>
+            <span class="tech-tag">Blade</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+
+          <!-- احذف هاد السطر لو ما في رابط عام -->
+          <a
+            href="https://milanopizzagrandsalinetx.com/en"
+            target="_blank"
+            rel="noopener"
+            data-i18n="projects.viewProject"
+            class="text-neon hover:underline text-sm"
+          ></a>
+        </div>
+        <!-- Project: Zakaria -->
+        <div class="card project-card">
+          <div
+            class="project-carousel relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700"
+            dir="ltr"
+          >
+            <div
+              class="carousel-track flex h-full transition-transform duration-500 ease-in-out"
+            >
+              <img
+                src="assets/images/projects/zakaria-1.png"
+                alt="Zakaria project screenshot 1"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/zakaria-2.png"
+                alt="Zakaria project screenshot 2"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/zakaria-3.png"
+                alt="Zakaria project screenshot 3"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/zakaria-4.png"
+                alt="Zakaria project screenshot 4"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+            </div>
+            <button class="carousel-prev" aria-label="Previous image">‹</button>
+            <button class="carousel-next" aria-label="Next image">›</button>
+            <div class="carousel-dots"></div>
+          </div>
+
+          <h3
+            data-i18n="projects.items.zakaria.title"
+            class="text-xl font-semibold mb-2"
+          ></h3>
+          <p
+            data-i18n="projects.items.zakaria.description"
+            class="text-gray-400 text-sm leading-relaxed mb-4"
+          ></p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">Filament</span>
+            <span class="tech-tag">Blade</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">CMS</span>
+          </div>
+
+          <a
+            href="https://www.zakariaalkafri.com/en"
+            target="_blank"
+            rel="noopener"
+            data-i18n="projects.viewProject"
+            class="text-neon hover:underline text-sm"
+          ></a>
+        </div>
+
+        <!-- Project: HEBRA -->
+        <div class="card project-card">
+          <div
+            class="project-carousel relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700"
+            dir="ltr"
+          >
+            <div
+              class="carousel-track flex h-full transition-transform duration-500 ease-in-out"
+            >
+              <img
+                src="assets/images/projects/Hebar-1.png"
+                alt="HEBRA project screenshot 1"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/Hebar-2.png"
+                alt="HEBRA project screenshot 2"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+              <img
+                src="assets/images/projects/Hebar-3.png"
+                alt="HEBRA project screenshot 3"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+               <img
+                src="assets/images/projects/Hebar-4.png"
+                alt="HEBRA project screenshot 4"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+               <img
+                src="assets/images/projects/Hebar-5.png"
+                alt="HEBRA project screenshot 5"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+               <img
+                src="assets/images/projects/Hebar-6.png"
+                alt="HEBRA project screenshot 6"
+                class="w-full h-full object-cover flex-shrink-0"
+              />
+            </div>
+            <button class="carousel-prev" aria-label="Previous image">‹</button>
+            <button class="carousel-next" aria-label="Next image">›</button>
+            <div class="carousel-dots"></div>
+          </div>
+
+          <h3
+            data-i18n="projects.items.hebra.title"
+            class="text-xl font-semibold mb-2"
+          ></h3>
+          <p
+            data-i18n="projects.items.hebra.description"
+            class="text-gray-400 text-sm leading-relaxed mb-4"
+          ></p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">Laravel 12</span>
+            <span class="tech-tag">Filament 5</span>
+            <span class="tech-tag">Livewire</span>
+            <span class="tech-tag">Alpine.js</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+
+          <a
+            href="https://hebar-tec.com/ar"
+            target="_blank"
+            rel="noopener"
+            data-i18n="projects.viewProject"
+            class="text-neon hover:underline text-sm"
+          ></a>
+        </div>
+        <!-- Project: Law Firm Management System -->
+<div class="card project-card">
+  <div class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700 flex flex-col items-center justify-center gap-2 border border-dark-700">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-neon/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+    <span class="text-xs text-gray-500" data-i18n="projects.confidential"></span>
+  </div>
+
+  <h3 data-i18n="projects.items.lawfirm.title" class="text-xl font-semibold mb-2"></h3>
+  <p data-i18n="projects.items.lawfirm.description" class="text-gray-400 text-sm leading-relaxed mb-4"></p>
+
+  <div class="flex flex-wrap gap-2">
+    <span class="tech-tag">Laravel</span>
+    <span class="tech-tag">Livewire</span>
+    <span class="tech-tag">Blade</span>
+    <span class="tech-tag">MySQL</span>
+    <span class="tech-tag">Google Drive API</span>
+    <span class="tech-tag">Roles & Permissions</span>
+  </div>
+</div>
+      </div>
     </section>
 
     <!-- Contact -->

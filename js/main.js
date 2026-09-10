@@ -114,3 +114,41 @@ function initScrollReveal() {
 
 document.addEventListener("DOMContentLoaded", initScrollReveal);
 document.addEventListener("DOMContentLoaded", initLanguage);
+function initProjectCarousels() {
+  document.querySelectorAll(".project-carousel").forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+    const slides = Array.from(track.children);
+    const prevBtn = carousel.querySelector(".carousel-prev");
+    const nextBtn = carousel.querySelector(".carousel-next");
+    const dotsContainer = carousel.querySelector(".carousel-dots");
+    let currentIndex = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", `Go to image ${i + 1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.children);
+
+    function update() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((d, i) =>
+        d.classList.toggle("carousel-dot-active", i === currentIndex),
+      );
+    }
+
+    function goTo(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      update();
+    }
+
+    prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+    nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+
+    update();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initProjectCarousels);

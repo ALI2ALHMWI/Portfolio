@@ -23,7 +23,28 @@
   },
   "projects": {
     "heading": "Projects",
-    "subheading": "A selection of production applications I've built and maintained."
+    "subheading": "A selection of production applications I've built and maintained.",
+    "viewProject": "View Project →",
+    "confidential": "Private project",
+    "items": {
+      "milano": {
+        "title": "Milano — Restaurant Website & CMS",
+        "description": "A full-featured restaurant website and CMS built for Milano Pizza. Includes a complete admin dashboard for managing content, menus, pricing, and site appearance, plus bilingual support (English/Spanish) and automated backup management — built with a strong focus on maintainability and ease of use."
+      },
+      "zakaria": {
+        "title": "Zakaria — Dynamic CMS & Company Website",
+        "description": "A production CMS and company website built for a company specializing in interior and decorative design. Features a flexible dashboard for managing content, sections, and text, along with advanced filtering tools — giving the client full control over the site without needing code changes."
+      },
+      "hebra": {
+        "title": "HEBAR — Bilingual E-Commerce Platform",
+        "description": "A bilingual (Arabic/English) storefront and admin platform for printer, ink, toner, and office supply products. Includes a full product catalog with comparison and WhatsApp checkout, QR payment confirmation, and a Filament-powered admin dashboard covering orders, SEO, and analytics."
+      },
+      "lawfirm": {
+        "title": "Law Firm Management & Case Management System",
+        "description": "A production-ready system for a law firm to manage employees, cases, and internal communication. Features case tracking with review reminders, private per-case chat rooms, granular role-based permissions, employee activity logging, and Google Drive integration for document storage."
+      }
+    }
+    
   },
   "contact": {
     "heading": "Get In Touch",
