@@ -1,626 +1,550 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ali Alhamwi | Portfolio</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
+    <title>Ali Alhamwi | PHP &amp; Laravel Developer</title>
+    <meta
+      name="description"
+      content="Ali Alhamwi is a PHP & Laravel Developer with 2+ years of hands-on experience building production-ready web applications, REST APIs, and MySQL-backed systems."
     />
+    <meta name="author" content="Ali Alhamwi" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ali2alhmwi.github.io/Portfolio/" />
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind-config.js"></script>
+    <meta property="og:title" content="Ali Alhamwi | PHP &amp; Laravel Developer" />
+    <meta
+      property="og:description"
+      content="PHP & Laravel Developer building production-ready web applications, REST APIs, and custom systems for real-world clients."
+    />
+    <meta property="og:image" content="https://ali2alhmwi.github.io/Portfolio/assets/images/og-preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ali2alhmwi.github.io/Portfolio/" />
 
-    <style type="text/tailwindcss">
-      @layer base {
-        html[dir="rtl"] body {
-          @apply font-arabic;
-        }
-        html[dir="ltr"] body {
-          @apply font-english;
-        }
-        body {
-          @apply bg-dark-900 text-white;
-        }
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ali Alhamwi | PHP &amp; Laravel Developer" />
+    <meta
+      name="twitter:description"
+      content="PHP & Laravel Developer building production-ready web applications, REST APIs, and custom systems for real-world clients."
+    />
+    <meta name="twitter:image" content="https://ali2alhmwi.github.io/Portfolio/assets/images/og-preview.jpg" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/images/profile-hero.jpg" as="image" fetchpriority="high" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Ali Alhamwi",
+            "jobTitle": "PHP & Laravel Developer",
+            "url": "https://ali2alhmwi.github.io/Portfolio/",
+            "image": "https://ali2alhmwi.github.io/Portfolio/assets/images/profile-hero.jpg",
+            "email": "mailto:ali.alhamwi.256@gmail.com",
+            "sameAs": [
+              "https://www.linkedin.com/in/ali-alhamwi-72a00a225/",
+              "https://github.com/ALI2ALHMWI",
+              "https://gitlab.com/Ali-Alhamwi"
+            ],
+            "knowsAbout": [
+              "PHP",
+              "Laravel",
+              "REST APIs",
+              "MySQL",
+              "Filament",
+              "Livewire",
+              "React",
+              "Node.js",
+              "TypeScript",
+              "Full-Stack Development"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Ali Alhamwi Portfolio",
+            "url": "https://ali2alhmwi.github.io/Portfolio/",
+            "author": {
+              "@type": "Person",
+              "name": "Ali Alhamwi"
+            }
+          }
+        ]
       }
-
-      @layer components {
-        .btn-primary {
-          @apply px-6 py-3 rounded-lg bg-neon text-dark-900 font-semibold transition duration-300 hover:scale-105;
-          box-shadow: 0 0 0 rgba(34, 211, 238, 0);
-        }
-        .btn-primary:hover {
-          box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
-        }
-
-        .card {
-          @apply bg-dark-800 border border-dark-700 rounded-xl p-6 transition duration-300;
-        }
-        .card:hover {
-          @apply border-neon;
-          box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
-        }
-
-        .skill-badge {
-          @apply px-4 py-2 rounded-full bg-dark-800 border border-dark-700 text-gray-300 transition duration-300;
-        }
-        .skill-badge:hover {
-          @apply border-neon text-neon;
-        }
-
-        .section-heading {
-          @apply text-3xl md:text-4xl font-bold text-white mb-2;
-        }
-        .section-underline {
-          @apply w-12 h-1 bg-neon rounded mb-6;
-        }
-
-        .nav-link {
-          @apply text-gray-300 hover:text-neon transition duration-300;
-        }
-        .tech-tag {
-          @apply px-3 py-1 text-xs rounded-full bg-dark-700 text-gray-300 border border-dark-700;
-        }
-
-        .carousel-prev,
-        .carousel-next {
-          @apply absolute top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-dark-900/70 text-white text-lg hover:bg-neon hover:text-dark-900 transition;
-        }
-        .carousel-prev {
-          left: 0.5rem;
-        }
-        .carousel-next {
-          right: 0.5rem;
-        }
-
-        .carousel-dots {
-          @apply absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5;
-        }
-        .carousel-dot {
-          @apply w-2 h-2 rounded-full bg-white/40 transition;
-        }
-        .carousel-dot-active {
-          @apply bg-neon w-4;
-        }
-      }
-      @layer utilities {
-        .reveal {
-          opacity: 0;
-          transform: translateY(30px);
-          transition:
-            opacity 0.7s ease-out,
-            transform 0.7s ease-out;
-        }
-        .reveal.reveal-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        #mobile-menu.menu-open {
-          max-height: 20rem;
-        }
-
-        #menu-toggle.menu-open .menu-bar:nth-child(1) {
-          transform: translateY(8px) rotate(45deg);
-        }
-        #menu-toggle.menu-open .menu-bar:nth-child(2) {
-          opacity: 0;
-        }
-        #menu-toggle.menu-open .menu-bar:nth-child(3) {
-          transform: translateY(-8px) rotate(-45deg);
-        }
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out both;
-        }
-
-        @keyframes blob {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(30px, -20px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-        .animate-blob {
-          animation: blob 8s ease-in-out infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .animate-fade-in-up,
-          .animate-blob {
-            animation: none !important;
-          }
-        }
-      }
-    </style>
+    </script>
   </head>
   <body>
-    <!-- Nav -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur border-b border-dark-700 px-6 py-4"
-    >
-      <div class="flex items-center justify-between">
-        <ul class="hidden md:flex gap-6 rtl:space-x-reverse">
-          <li><a href="#home" data-i18n="nav.home" class="nav-link"></a></li>
-          <li><a href="#about" data-i18n="nav.about" class="nav-link"></a></li>
-          <li>
-            <a href="#skills" data-i18n="nav.skills" class="nav-link"></a>
-          </li>
-          <li>
-            <a href="#projects" data-i18n="nav.projects" class="nav-link"></a>
-          </li>
-          <li>
-            <a href="#contact" data-i18n="nav.contact" class="nav-link"></a>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-code" viewBox="0 0 48 48">
+        <path d="M19 14 9 24l10 10M29 14l10 10-10 10M27 9l-6 30" />
+      </symbol>
+      <symbol id="icon-php" viewBox="0 0 48 48">
+        <ellipse cx="24" cy="24" rx="19" ry="10" />
+        <text x="24" y="28" text-anchor="middle">php</text>
+      </symbol>
+      <symbol id="icon-laravel" viewBox="0 0 48 48">
+        <path d="M9 10v19l15 9 15-9V10L24 19 9 10Z" />
+        <path d="M9 10l15 9v19M39 10 24 19M9 29l15-10 15 10" />
+      </symbol>
+      <symbol id="icon-react" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="3.5" />
+        <ellipse cx="24" cy="24" rx="18" ry="7" />
+        <ellipse cx="24" cy="24" rx="18" ry="7" transform="rotate(60 24 24)" />
+        <ellipse cx="24" cy="24" rx="18" ry="7" transform="rotate(120 24 24)" />
+      </symbol>
+      <symbol id="icon-node" viewBox="0 0 48 48">
+        <path d="M24 6 40 15v18L24 42 8 33V15L24 6Z" />
+        <text x="24" y="29" text-anchor="middle">JS</text>
+      </symbol>
+      <symbol id="icon-js" viewBox="0 0 48 48">
+        <rect x="9" y="9" width="30" height="30" rx="5" />
+        <text x="24" y="31" text-anchor="middle">JS</text>
+      </symbol>
+      <symbol id="icon-ts" viewBox="0 0 48 48">
+        <rect x="9" y="9" width="30" height="30" rx="5" />
+        <text x="24" y="31" text-anchor="middle">TS</text>
+      </symbol>
+      <symbol id="icon-git" viewBox="0 0 48 48">
+        <path d="M24 5 43 24 24 43 5 24 24 5Z" />
+        <circle cx="17" cy="17" r="2.5" />
+        <circle cx="24" cy="24" r="2.5" />
+        <circle cx="31" cy="31" r="2.5" />
+        <path d="m19 19 3 3m4 4 3 3M24 13v20" />
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 48 48">
+        <path d="M24 6a18 18 0 0 0-6 35c.9.2 1.2-.4 1.2-.9v-4.2c-5 1.1-6.1-2.1-6.1-2.1-.8-2-2-2.6-2-2.6-1.6-1.1.1-1.1.1-1.1 1.8.1 2.8 1.9 2.8 1.9 1.6 2.8 4.3 2 5.3 1.5.2-1.2.6-2 1.1-2.5-4-.5-8.2-2-8.2-8.8 0-1.9.7-3.5 1.9-4.8-.2-.5-.8-2.4.2-4.9 0 0 1.5-.5 5.1 1.8a17.5 17.5 0 0 1 9.2 0c3.5-2.3 5.1-1.8 5.1-1.8 1 2.5.4 4.4.2 4.9a6.8 6.8 0 0 1 1.9 4.8c0 6.8-4.2 8.3-8.2 8.8.7.6 1.2 1.7 1.2 3.4v5.7c0 .5.3 1.1 1.2.9A18 18 0 0 0 24 6Z" />
+      </symbol>
+      <symbol id="icon-mysql" viewBox="0 0 48 48">
+        <path d="M10 31c5-10 13-15 25-15 3 0 5 .6 6 1.7-5 .8-9 2.4-12 4.8-3.6 2.8-5.7 6.2-6.4 10.3-5.4.5-9.6-.1-12.6-1.8Z" />
+        <path d="M25 18c-2.2-5.1-6.3-7.5-12.2-7.2 1.5 6 5.2 10 11.2 12" />
+      </symbol>
+      <symbol id="icon-html" viewBox="0 0 48 48">
+        <path d="M11 7h26l-2.4 29.5L24 41 13.4 36.5 11 7Z" />
+        <path d="M18 15h12M18.7 23h10.6l-.6 7-4.7 2-4.7-2-.3-3" />
+      </symbol>
+      <symbol id="icon-css" viewBox="0 0 48 48">
+        <path d="M11 7h26l-2.4 29.5L24 41 13.4 36.5 11 7Z" />
+        <path d="M30 15H18l.4 5H29l-.8 10-4.2 2-4.5-2-.3-3" />
+      </symbol>
+      <symbol id="icon-db" viewBox="0 0 48 48">
+        <ellipse cx="24" cy="12" rx="14" ry="6" />
+        <path d="M10 12v24c0 3.3 6.3 6 14 6s14-2.7 14-6V12M10 24c0 3.3 6.3 6 14 6s14-2.7 14-6" />
+      </symbol>
+      <symbol id="icon-api" viewBox="0 0 48 48">
+        <rect x="8" y="14" width="32" height="20" rx="5" />
+        <path d="M16 24h16M24 16v16" />
+      </symbol>
+      <symbol id="icon-filament" viewBox="0 0 48 48">
+        <path d="M10 37 22 9h16L26 37H10Z" />
+        <path d="M16 26h18" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="site-backdrop" aria-hidden="true">
+      <span class="grid-plane"></span>
+      <span class="circuit-lines"></span>
+      <span class="atmosphere atmosphere-one"></span>
+      <span class="atmosphere atmosphere-two"></span>
+      <span class="particles"></span>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Ali Alhamwi home">
+          <svg class="brand-mark" aria-hidden="true"><use href="#icon-code"></use></svg>
+          <span>Ali Alhamwi</span>
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="icon-button menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+        >
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+
+        <ul id="primary-menu" class="nav-links">
+          <li><a class="nav-link active" href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+          <li><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li class="mobile-lang-item">
+            <button class="language-toggle mobile-language-toggle" data-lang-toggle type="button" aria-label="Switch language">
+              عربي
+            </button>
           </li>
         </ul>
 
-        <div class="flex items-center gap-3 md:order-2">
-          <button id="lang-toggle" class="skill-badge text-sm">EN</button>
-          <button
-            id="menu-toggle"
-            class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-          >
-            <span
-              class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"
-            ></span>
-            <span
-              class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"
-            ></span>
-            <span
-              class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"
-            ></span>
-          </button>
-        </div>
-      </div>
+        <button id="lang-toggle" class="language-toggle" data-lang-toggle type="button" aria-label="Switch language">
+          عربي
+        </button>
+      </nav>
+    </header>
 
-      <ul
-        id="mobile-menu"
-        class="md:hidden flex flex-col gap-4 mt-4 pt-4 border-t border-dark-700 max-h-0 overflow-hidden transition-all duration-300"
-      >
-        <li>
-          <a href="#home" data-i18n="nav.home" class="nav-link block"></a>
-        </li>
-        <li>
-          <a href="#about" data-i18n="nav.about" class="nav-link block"></a>
-        </li>
-        <li>
-          <a href="#skills" data-i18n="nav.skills" class="nav-link block"></a>
-        </li>
-        <li>
-          <a
-            href="#projects"
-            data-i18n="nav.projects"
-            class="nav-link block"
-          ></a>
-        </li>
-        <li>
-          <a href="#contact" data-i18n="nav.contact" class="nav-link block"></a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Hero -->
-    <section
-      id="home"
-      class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 overflow-hidden"
-    >
-      <!-- Animated background glow -->
-      <div class="absolute inset-0 -z-10 overflow-hidden">
-        <div
-          class="absolute w-96 h-96 bg-neon/20 rounded-full blur-3xl top-1/4 -left-20 animate-blob"
-        ></div>
-        <div
-          class="absolute w-96 h-96 bg-neon/10 rounded-full blur-3xl bottom-1/4 -right-20 animate-blob animation-delay-2000"
-        ></div>
-      </div>
-
-      <h1
-        data-i18n="hero.name"
-        class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up"
-        style="animation-delay: 0.1s"
-      ></h1>
-      <p
-        id="hero-title"
-        data-i18n="hero.title"
-        class="text-lg md:text-xl text-gray-400 max-w-2xl mb-8 min-h-[3.5rem]"
-      ></p>
-      <a
-        href="#projects"
-        id="hero-cta"
-        data-i18n="hero.cta"
-        class="btn-primary"
-        style="opacity: 0"
-      ></a>
-    </section>
-
-    <!-- About -->
-    <section
-      id="about"
-      class="reveal py-20 px-6 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10"
-    >
-      <div
-        class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-neon/40 flex-shrink-0"
-      >
-        <img
-          src="assets/images/Profile.png"
-          alt="Ali Alhamwi"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div>
-        <h2 data-i18n="about.heading" class="section-heading"></h2>
-        <span class="section-underline block"></span>
-        <p data-i18n="about.text" class="text-gray-400 leading-relaxed"></p>
-      </div>
-    </section>
-    <!-- Skills -->
-    <section id="skills" class="reveal py-20 px-6 max-w-4xl mx-auto">
-      <h2 data-i18n="skills.heading" class="section-heading"></h2>
-      <span class="section-underline block"></span>
-
-      <div class="grid gap-8 md:grid-cols-3 mt-8">
-        <div>
-          <h3
-            data-i18n="skills.backend"
-            class="text-neon font-semibold mb-3"
-          ></h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-badge">PHP</span>
-            <span class="skill-badge">Laravel</span>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Express</span>
-          </div>
-        </div>
-
-        <div>
-          <h3
-            data-i18n="skills.frontend"
-            class="text-neon font-semibold mb-3"
-          ></h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">Next.js</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">TypeScript</span>
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">CSS</span>
-          </div>
-        </div>
-
-        <div>
-          <h3
-            data-i18n="skills.database"
-            class="text-neon font-semibold mb-3"
-          ></h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-badge">MySQL</span>
-            <span class="skill-badge">MongoDB</span>
-            <span class="skill-badge">Database Design</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <
-    <section id="projects" class="reveal py-20 px-6 max-w-5xl mx-auto">
-      <h2 data-i18n="projects.heading" class="section-heading"></h2>
-      <span class="section-underline block"></span>
-      <p data-i18n="projects.subheading" class="text-gray-400 mb-10"></p>
-
-      <div class="grid gap-8 md:grid-cols-2">
-        <!-- Project: Milano -->
-        <div class="card project-card">
-          <div
-            class="project-carousel relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700"
-            dir="ltr"
-          >
-            <div
-              class="carousel-track flex h-full transition-transform duration-500 ease-in-out"
-            >
+    <main id="main">
+      <section id="home" class="hero-section" aria-labelledby="hero-heading">
+        <div class="section-container hero-grid">
+          <div class="hero-stage reveal" data-depth-scene>
+            <div class="hero-aurora" aria-hidden="true"></div>
+            <div class="hologram-ring ring-main" aria-hidden="true"></div>
+            <div class="hologram-ring ring-tilt" aria-hidden="true"></div>
+            <div class="code-cube cube-primary" aria-hidden="true">
+              <svg><use href="#icon-code"></use></svg>
+            </div>
+            <div class="profile-frame">
               <img
-                src="assets/images/projects/milano-2.png"
-                alt="Milano project screenshot 1"
-                loading="eager" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/milano-3.png"
-                alt="Milano project screenshot 2"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/milano-4.png"
-                alt="Milano project screenshot 3"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/milano-1.png"
-                alt="Milano project screenshot 4"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
+                src="assets/images/profile-hero.jpg"
+                width="640"
+                height="640"
+                fetchpriority="high"
+                decoding="async"
+                alt="Ali Alhamwi"
               />
             </div>
-            <button class="carousel-prev" aria-label="Previous image">‹</button>
-            <button class="carousel-next" aria-label="Next image">›</button>
-            <div class="carousel-dots"></div>
-          </div>
 
-          <h3
-            data-i18n="projects.items.milano.title"
-            class="text-xl font-semibold mb-2"
-          ></h3>
-          <p
-            data-i18n="projects.items.milano.description"
-            class="text-gray-400 text-sm leading-relaxed mb-4"
-          ></p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">Filament</span>
-            <span class="tech-tag">Blade</span>
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">MySQL</span>
-          </div>
-
-          <!-- احذف هاد السطر لو ما في رابط عام -->
-          <a
-            href="https://milanopizzagrandsalinetx.com/en"
-            target="_blank"
-            rel="noopener"
-            data-i18n="projects.viewProject"
-            class="text-neon hover:underline text-sm"
-          ></a>
-        </div>
-        <!-- Project: Zakaria -->
-        <div class="card project-card">
-          <div
-            class="project-carousel relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700"
-            dir="ltr"
-          >
-            <div
-              class="carousel-track flex h-full transition-transform duration-500 ease-in-out"
-            >
-              <img
-                src="assets/images/projects/zakaria-1.png"
-                alt="Zakaria project screenshot 1"
-                loading="eager" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/zakaria-2.png"
-                alt="Zakaria project screenshot 2"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/zakaria-3.png"
-                alt="Zakaria project screenshot 3"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/zakaria-4.png"
-                alt="Zakaria project screenshot 4"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
+            <div class="hero-tech-cloud" aria-label="Technology highlights">
+              <span class="tech-icon-card hero-tech tech-php" role="img" aria-label="PHP" data-label="PHP"><svg><use href="#icon-php"></use></svg><span class="sr-only">PHP</span></span>
+              <span class="tech-icon-card hero-tech tech-laravel" role="img" aria-label="Laravel" data-label="Laravel"><svg><use href="#icon-laravel"></use></svg><span class="sr-only">Laravel</span></span>
+              <span class="tech-icon-card hero-tech tech-react" role="img" aria-label="MySQL" data-label="MySQL"><svg><use href="#icon-mysql"></use></svg><span class="sr-only">MySQL</span></span>
+              <span class="tech-icon-card hero-tech tech-node" role="img" aria-label="REST API" data-label="REST API"><svg><use href="#icon-api"></use></svg><span class="sr-only">REST API</span></span>
+              <span class="tech-icon-card hero-tech tech-js" role="img" aria-label="PHP" data-label="PHP"><svg><use href="#icon-php"></use></svg><span class="sr-only">PHP</span></span>
             </div>
-            <button class="carousel-prev" aria-label="Previous image">‹</button>
-            <button class="carousel-next" aria-label="Next image">›</button>
-            <div class="carousel-dots"></div>
           </div>
 
-          <h3
-            data-i18n="projects.items.zakaria.title"
-            class="text-xl font-semibold mb-2"
-          ></h3>
-          <p
-            data-i18n="projects.items.zakaria.description"
-            class="text-gray-400 text-sm leading-relaxed mb-4"
-          ></p>
+          <div class="hero-copy reveal">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Building reliable web applications from database to production.</p>
+            <h1 id="hero-heading" data-i18n="hero.name">Ali Alhamwi</h1>
+            <p class="hero-title" data-i18n="hero.title">PHP &amp; Laravel Developer</p>
+            <p class="hero-description" data-i18n="hero.description">
+              PHP &amp; Laravel Developer with 2+ years of hands-on experience building and maintaining production-ready web applications, REST APIs, and custom systems for real-world clients.
+            </p>
 
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">Filament</span>
-            <span class="tech-tag">Blade</span>
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">CMS</span>
-          </div>
-
-          <a
-            href="https://www.zakariaalkafri.com/en"
-            target="_blank"
-            rel="noopener"
-            data-i18n="projects.viewProject"
-            class="text-neon hover:underline text-sm"
-          ></a>
-        </div>
-
-        <!-- Project: HEBRA -->
-        <div class="card project-card">
-          <div
-            class="project-carousel relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700"
-            dir="ltr"
-          >
-            <div
-              class="carousel-track flex h-full transition-transform duration-500 ease-in-out"
-            >
-              <img
-                src="assets/images/projects/Hebar-1.png"
-                alt="HEBRA project screenshot 1"
-                loading="eager" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/Hebar-2.png"
-                alt="HEBRA project screenshot 2"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/Hebar-3.png"
-                alt="HEBRA project screenshot 3"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/Hebar-4.png"
-                alt="HEBRA project screenshot 4"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/Hebar-5.png"
-                alt="HEBRA project screenshot 5"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
-              <img
-                src="assets/images/projects/Hebar-6.png"
-                alt="HEBRA project screenshot 6"
-                loading="lazy" decoding="async"
-                class="w-full h-full object-cover flex-shrink-0"
-              />
+            <div class="tech-strip" aria-label="Core technologies">
+              <span class="tech-icon-card" role="img" aria-label="PHP" data-label="PHP"><svg><use href="#icon-php"></use></svg><span class="sr-only">PHP</span></span>
+              <span class="tech-icon-card" role="img" aria-label="Laravel" data-label="Laravel"><svg><use href="#icon-laravel"></use></svg><span class="sr-only">Laravel</span></span>
+              <span class="tech-icon-card" role="img" aria-label="MySQL" data-label="MySQL"><svg><use href="#icon-mysql"></use></svg><span class="sr-only">MySQL</span></span>
+              <span class="tech-icon-card" role="img" aria-label="REST API" data-label="REST API"><svg><use href="#icon-api"></use></svg><span class="sr-only">REST API</span></span>
             </div>
-            <button class="carousel-prev" aria-label="Previous image">‹</button>
-            <button class="carousel-next" aria-label="Next image">›</button>
-            <div class="carousel-dots"></div>
-          </div>
 
-          <h3
-            data-i18n="projects.items.hebra.title"
-            class="text-xl font-semibold mb-2"
-          ></h3>
-          <p
-            data-i18n="projects.items.hebra.description"
-            class="text-gray-400 text-sm leading-relaxed mb-4"
-          ></p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-tag">Laravel 12</span>
-            <span class="tech-tag">Filament 5</span>
-            <span class="tech-tag">Livewire</span>
-            <span class="tech-tag">Alpine.js</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">MySQL</span>
-          </div>
-
-          <a
-            href="https://hebar-tec.com/ar"
-            target="_blank"
-            rel="noopener"
-            data-i18n="projects.viewProject"
-            class="text-neon hover:underline text-sm"
-          ></a>
-        </div>
-        <!-- Project: Law Firm Management System -->
-        <div class="card project-card">
-          <div
-            class="relative overflow-hidden rounded-lg mb-4 aspect-video bg-dark-700 flex flex-col items-center justify-center gap-2 border border-dark-700"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-10 h-10 text-neon/70"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-              />
-            </svg>
-            <span
-              class="text-xs text-gray-500"
-              data-i18n="projects.confidential"
-            ></span>
-          </div>
-
-          <h3
-            data-i18n="projects.items.lawfirm.title"
-            class="text-xl font-semibold mb-2"
-          ></h3>
-          <p
-            data-i18n="projects.items.lawfirm.description"
-            class="text-gray-400 text-sm leading-relaxed mb-4"
-          ></p>
-
-          <div class="flex flex-wrap gap-2">
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">Livewire</span>
-            <span class="tech-tag">Blade</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Google Drive API</span>
-            <span class="tech-tag">Roles & Permissions</span>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">
+                <span data-i18n="hero.projectsCta">View Projects</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button button-secondary" href="#contact" data-i18n="hero.contactCta">
+                Contact Me
+              </a>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section id="about" class="about-section section-band reveal" aria-labelledby="about-heading">
+        <div class="section-container dashboard-grid">
+          <article class="glass-panel about-card">
+            <div class="panel-heading">
+              <svg class="panel-icon" aria-hidden="true"><use href="#icon-code"></use></svg>
+              <div>
+                <p class="eyebrow" data-i18n="about.eyebrow">ABOUT &amp; SKILLS</p>
+                <h2 id="about-heading" data-i18n="about.heading">About Me</h2>
+              </div>
+            </div>
+            <p data-i18n="about.text1">
+              I’m a PHP &amp; Laravel Developer with 2+ years of hands-on experience building and maintaining production-ready web applications for real clients.
+            </p>
+            <p data-i18n="about.text2">
+              My main focus is backend and full-stack web development with PHP, Laravel, MySQL, REST APIs, and modern web technologies. I enjoy turning business requirements into reliable, maintainable systems — from database design and authentication to admin dashboards, APIs, integrations, and deployment.
+            </p>
+            <p data-i18n="about.text3">
+              I have worked on real-world projects across different business needs, including content management systems, e-commerce-related platforms, property and service management, and custom internal systems. My experience goes beyond writing code; I also work with Git, GitHub/GitLab, SEO, performance optimization, hosting, and production deployment.
+            </p>
+            <p data-i18n="about.text4">
+              Since 2024, I have been continuously developing my Laravel expertise through real client projects and production applications.
+            </p>
+            <p data-i18n="about.text5">
+              I’m currently expanding my full-stack skill set through the Byts4Future program, where I’m working with React, TypeScript, Node.js, Express, MongoDB, Next.js, and React Native, alongside problem solving, communication, English, and teamwork.
+            </p>
+            <p data-i18n="about.text6">
+              My goal is to grow into a well-rounded Junior Full-Stack Developer, combining my practical Laravel experience with modern JavaScript technologies to build complete, production-ready web and mobile applications.
+            </p>
+            <div class="metric-row" aria-label="Portfolio highlights">
+              <span>
+                <strong>2+</strong>
+                <small data-i18n="about.metrics.production">Years of hands-on Laravel experience</small>
+              </span>
+              <span>
+                <strong>2024</strong>
+                <small data-i18n="about.metrics.projects">Building with Laravel since 2024</small>
+              </span>
+              <span>
+                <strong>PHP</strong>
+                <small data-i18n="about.metrics.bilingual">Primary professional stack with Laravel and MySQL</small>
+              </span>
+            </div>
+          </article>
+
+          <article class="glass-panel skills-dashboard" aria-labelledby="skills-dashboard-heading">
+            <div class="panel-heading">
+              <svg class="panel-icon" aria-hidden="true"><use href="#icon-db"></use></svg>
+              <div>
+                <p class="eyebrow" data-i18n="skills.eyebrow">SKILL HIERARCHY</p>
+                <h2 id="skills-dashboard-heading" data-i18n="skills.heading">My Skills</h2>
+              </div>
+            </div>
+
+            <div class="skill-category-grid">
+              <section class="skill-category">
+                <h3 data-i18n="skills.primary">Primary Stack</h3>
+                <div class="skill-list">
+                  <span class="skill-card"><svg><use href="#icon-php"></use></svg><span>PHP</span></span>
+                  <span class="skill-card"><svg><use href="#icon-laravel"></use></svg><span>Laravel</span></span>
+                  <span class="skill-card"><svg><use href="#icon-mysql"></use></svg><span>MySQL</span></span>
+                  <span class="skill-card"><svg><use href="#icon-api"></use></svg><span>REST API</span></span>
+                </div>
+              </section>
+
+              <section class="skill-category">
+                <h3 data-i18n="skills.frontend">Frontend</h3>
+                <div class="skill-list">
+                  <span class="skill-card"><svg><use href="#icon-html"></use></svg><span>HTML</span></span>
+                  <span class="skill-card"><svg><use href="#icon-css"></use></svg><span>CSS</span></span>
+                  <span class="skill-card"><svg><use href="#icon-js"></use></svg><span>JavaScript</span></span>
+                  <span class="skill-card"><svg><use href="#icon-react"></use></svg><span>React</span></span>
+                </div>
+              </section>
+
+              <section class="skill-category">
+                <h3 data-i18n="skills.backendTools">Backend &amp; Tools</h3>
+                <div class="skill-list">
+                  <span class="skill-card"><svg><use href="#icon-filament"></use></svg><span>Filament</span></span>
+                  <span class="skill-card"><svg><use href="#icon-code"></use></svg><span>Livewire</span></span>
+                  <span class="skill-card"><svg><use href="#icon-git"></use></svg><span>Git</span></span>
+                  <span class="skill-card"><svg><use href="#icon-github"></use></svg><span>GitHub</span></span>
+                  <span class="skill-card"><svg><use href="#icon-git"></use></svg><span>GitLab</span></span>
+                  <span class="skill-card"><svg><use href="#icon-db"></use></svg><span>Database Design</span></span>
+                </div>
+              </section>
+
+              <section class="skill-category">
+                <h3 data-i18n="skills.expanding">Currently Expanding</h3>
+                <div class="skill-list">
+                  <span class="skill-card"><svg><use href="#icon-ts"></use></svg><span>TypeScript</span></span>
+                  <span class="skill-card"><svg><use href="#icon-node"></use></svg><span>Node.js</span></span>
+                  <span class="skill-card"><svg><use href="#icon-node"></use></svg><span>Express</span></span>
+                  <span class="skill-card"><svg><use href="#icon-db"></use></svg><span>MongoDB</span></span>
+                  <span class="skill-card"><svg><use href="#icon-code"></use></svg><span>Next.js</span></span>
+                  <span class="skill-card"><svg><use href="#icon-react"></use></svg><span>React Native</span></span>
+                </div>
+              </section>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section section-band reveal" aria-labelledby="projects-heading">
+        <div class="section-container">
+          <div class="section-title">
+            <p class="eyebrow" data-i18n="projects.eyebrow">PRODUCTION-READY WEB APPLICATIONS</p>
+            <h2 id="projects-heading" data-i18n="projects.heading">Featured Projects</h2>
+            <p data-i18n="projects.subheading">
+              A selection of production applications I've built and maintained.
+            </p>
+          </div>
+
+          <div class="project-grid featured-grid">
+            <article class="project-card">
+              <div class="project-media project-carousel" dir="ltr">
+                <div class="carousel-track">
+                  <img src="assets/images/projects/thumbs/Hebar-1.jpg" width="960" height="456" alt="HEBRA e-commerce project screenshot" loading="lazy" decoding="async" />
+                  <img src="assets/images/projects/thumbs/Hebar-2.jpg" width="960" height="456" alt="HEBRA product catalog screenshot" loading="lazy" decoding="async" />
+                  <img src="assets/images/projects/thumbs/Hebar-3.jpg" width="960" height="456" alt="HEBRA admin and storefront screenshot" loading="lazy" decoding="async" />
+                </div>
+                <button class="carousel-prev" type="button" aria-label="Previous HEBRA image">‹</button>
+                <button class="carousel-next" type="button" aria-label="Next HEBRA image">›</button>
+                <div class="carousel-dots" aria-hidden="true"></div>
+              </div>
+              <div class="project-body">
+                <h3 data-i18n="projects.items.hebra.title">HEBAR — Bilingual E-Commerce Platform</h3>
+                <p data-i18n="projects.items.hebra.description">
+                  A bilingual Arabic/English storefront and admin platform for printer, ink, toner, and office supply products. Includes a full product catalog with comparison and WhatsApp checkout, QR payment confirmation, and a Filament-powered admin dashboard covering orders, SEO, and analytics.
+                </p>
+                <ul class="tag-list" aria-label="HEBRA technology stack">
+                  <li data-label="Laravel 12"><svg><use href="#icon-laravel"></use></svg><span>Laravel 12</span></li>
+                  <li data-label="Filament 5"><svg><use href="#icon-filament"></use></svg><span>Filament 5</span></li>
+                  <li data-label="Livewire"><svg><use href="#icon-code"></use></svg><span>Livewire</span></li>
+                  <li data-label="Alpine.js"><svg><use href="#icon-js"></use></svg><span>Alpine.js</span></li>
+                  <li data-label="Tailwind CSS"><svg><use href="#icon-css"></use></svg><span>Tailwind CSS</span></li>
+                  <li data-label="MySQL"><svg><use href="#icon-mysql"></use></svg><span>MySQL</span></li>
+                </ul>
+                <a class="project-link" href="https://hebar-tec.com/ar" target="_blank" rel="noopener" data-i18n="projects.liveDemo">
+                  Live Demo
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media project-carousel" dir="ltr">
+                <div class="carousel-track">
+                  <img src="assets/images/projects/thumbs/zakaria-1.jpg" width="960" height="456" alt="Zakaria interior design website screenshot" loading="lazy" decoding="async" />
+                  <img src="assets/images/projects/thumbs/zakaria-2.jpg" width="960" height="456" alt="Zakaria CMS project screenshot" loading="lazy" decoding="async" />
+                  <img src="assets/images/projects/thumbs/zakaria-3.jpg" width="960" height="456" alt="Zakaria filtering tools screenshot" loading="lazy" decoding="async" />
+                </div>
+                <button class="carousel-prev" type="button" aria-label="Previous Zakaria image">‹</button>
+                <button class="carousel-next" type="button" aria-label="Next Zakaria image">›</button>
+                <div class="carousel-dots" aria-hidden="true"></div>
+              </div>
+              <div class="project-body">
+                <h3 data-i18n="projects.items.zakaria.title">Zakaria — Dynamic CMS &amp; Company Website</h3>
+                <p data-i18n="projects.items.zakaria.description">
+                  A production CMS and company website built for a company specializing in interior and decorative design. Features a flexible dashboard for managing content, sections, and text, along with advanced filtering tools, giving the client full control over the site without needing code changes.
+                </p>
+                <ul class="tag-list" aria-label="Zakaria technology stack">
+                  <li data-label="Laravel"><svg><use href="#icon-laravel"></use></svg><span>Laravel</span></li>
+                  <li data-label="Filament"><svg><use href="#icon-filament"></use></svg><span>Filament</span></li>
+                  <li data-label="Blade"><svg><use href="#icon-code"></use></svg><span>Blade</span></li>
+                  <li data-label="PHP"><svg><use href="#icon-php"></use></svg><span>PHP</span></li>
+                  <li data-label="CMS"><svg><use href="#icon-db"></use></svg><span>CMS</span></li>
+                </ul>
+                <a class="project-link" href="https://www.zakariaalkafri.com/en" target="_blank" rel="noopener" data-i18n="projects.liveDemo">
+                  Live Demo
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-media project-carousel" dir="ltr">
+                <div class="carousel-track">
+                  <img src="assets/images/projects/thumbs/milano-2.jpg" width="960" height="456" alt="Milano Pizza restaurant website screenshot" loading="lazy" decoding="async" />
+                  <img src="assets/images/projects/thumbs/milano-3.jpg" width="960" height="456" alt="Milano Pizza CMS page screenshot" loading="lazy" decoding="async" />
+                  <img src="assets/images/projects/thumbs/milano-4.jpg" width="960" height="456" alt="Milano Pizza menu management screenshot" loading="lazy" decoding="async" />
+                </div>
+                <button class="carousel-prev" type="button" aria-label="Previous Milano image">‹</button>
+                <button class="carousel-next" type="button" aria-label="Next Milano image">›</button>
+                <div class="carousel-dots" aria-hidden="true"></div>
+              </div>
+              <div class="project-body">
+                <h3 data-i18n="projects.items.milano.title">Milano — Restaurant Website &amp; CMS</h3>
+                <p data-i18n="projects.items.milano.description">
+                  A full-featured restaurant website and CMS built for Milano Pizza. Includes a complete admin dashboard for managing content, menus, pricing, and site appearance, plus bilingual support and automated backup management, built with a strong focus on maintainability and ease of use.
+                </p>
+                <ul class="tag-list" aria-label="Milano technology stack">
+                  <li data-label="Laravel"><svg><use href="#icon-laravel"></use></svg><span>Laravel</span></li>
+                  <li data-label="Filament"><svg><use href="#icon-filament"></use></svg><span>Filament</span></li>
+                  <li data-label="Blade"><svg><use href="#icon-code"></use></svg><span>Blade</span></li>
+                  <li data-label="PHP"><svg><use href="#icon-php"></use></svg><span>PHP</span></li>
+                  <li data-label="MySQL"><svg><use href="#icon-mysql"></use></svg><span>MySQL</span></li>
+                </ul>
+                <a class="project-link" href="https://milanopizzagrandsalinetx.com/en" target="_blank" rel="noopener" data-i18n="projects.liveDemo">
+                  Live Demo
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <article class="project-card private-project">
+            <div class="private-project-icon" aria-hidden="true">
+              <svg><use href="#icon-db"></use></svg>
+            </div>
+            <div class="project-body">
+              <p class="eyebrow" data-i18n="projects.confidential">Private project</p>
+              <h3 data-i18n="projects.items.lawfirm.title">Law Firm Management &amp; Case Management System</h3>
+              <p data-i18n="projects.items.lawfirm.description">
+                A production-ready system for a law firm to manage employees, cases, and internal communication. Features case tracking with review reminders, private per-case chat rooms, granular role-based permissions, employee activity logging, and Google Drive integration for document storage.
+              </p>
+              <ul class="tag-list" aria-label="Law firm system technology stack">
+                <li data-label="Laravel"><svg><use href="#icon-laravel"></use></svg><span>Laravel</span></li>
+                <li data-label="Livewire"><svg><use href="#icon-code"></use></svg><span>Livewire</span></li>
+                <li data-label="Blade"><svg><use href="#icon-code"></use></svg><span>Blade</span></li>
+                <li data-label="MySQL"><svg><use href="#icon-mysql"></use></svg><span>MySQL</span></li>
+                <li data-label="Google Drive API"><svg><use href="#icon-api"></use></svg><span>Google Drive API</span></li>
+                <li data-label="Roles & Permissions"><svg><use href="#icon-api"></use></svg><span>Roles &amp; Permissions</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="stack-section section-band reveal" aria-labelledby="stack-heading">
+        <div class="section-container">
+          <div class="section-title compact">
+            <p class="eyebrow" data-i18n="stack.eyebrow">DEVELOPER TOOLKIT</p>
+            <h2 id="stack-heading" data-i18n="stack.heading">Building Toward Full-Stack Readiness</h2>
+          </div>
+
+          <div class="stack-grid" aria-label="Development strengths">
+            <article class="stack-card">
+              <svg aria-hidden="true"><use href="#icon-api"></use></svg>
+              <h3 data-i18n="stack.cards.backend.title">Laravel Backend Systems</h3>
+              <p data-i18n="stack.cards.backend.text">Production-ready PHP and Laravel applications, REST APIs, authentication flows, MySQL databases, and admin dashboards.</p>
+            </article>
+            <article class="stack-card">
+              <svg aria-hidden="true"><use href="#icon-react"></use></svg>
+              <h3 data-i18n="stack.cards.frontend.title">Practical Frontend Work</h3>
+              <p data-i18n="stack.cards.frontend.text">Responsive HTML, CSS, JavaScript, and React interfaces connected to real backend systems and client requirements.</p>
+            </article>
+            <article class="stack-card">
+              <svg aria-hidden="true"><use href="#icon-db"></use></svg>
+              <h3 data-i18n="stack.cards.data.title">Currently Expanding</h3>
+              <p data-i18n="stack.cards.data.text">Developing toward a Junior Full-Stack Developer role through Byts4Future, with TypeScript, Node.js, Express, MongoDB, Next.js, and React Native.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section section-band reveal" aria-labelledby="contact-heading">
+        <div class="section-container contact-grid">
+          <div>
+            <p class="eyebrow" data-i18n="contact.eyebrow">CONTACT</p>
+            <h2 id="contact-heading" data-i18n="contact.heading">Get In Touch</h2>
+            <p data-i18n="contact.text">
+              Feel free to reach out. I'm always open to discussing new projects and opportunities.
+            </p>
+          </div>
+
+          <address class="contact-panel" aria-label="Public contact links">
+            <a href="mailto:ali.alhamwi.256@gmail.com">
+              <span>Email</span>
+              <strong>ali.alhamwi.256@gmail.com</strong>
+            </a>
+            <a href="https://www.linkedin.com/in/ali-alhamwi-72a00a225/" target="_blank" rel="noopener">
+              <span>LinkedIn</span>
+              <strong>ali-alhamwi-72a00a225</strong>
+            </a>
+            <a href="https://github.com/ALI2ALHMWI" target="_blank" rel="noopener">
+              <span>GitHub</span>
+              <strong>ALI2ALHMWI</strong>
+            </a>
+            <a href="https://gitlab.com/Ali-Alhamwi" target="_blank" rel="noopener">
+              <span>GitLab</span>
+              <strong>Ali-Alhamwi</strong>
+            </a>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-container footer-inner">
+        <p>
+          <strong>Ali Alhamwi</strong>
+          <span>PHP &amp; Laravel Developer</span>
+        </p>
+        <p>© 2026 Ali Alhamwi. All rights reserved.</p>
       </div>
-    </section>
+    </footer>
 
-    <!-- Contact -->
-    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
-      <h2 data-i18n="contact.heading" class="section-heading"></h2>
-      <span class="section-underline block mx-auto"></span>
-      <p data-i18n="contact.text" class="text-gray-400 mb-8"></p>
-
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="mailto:ali.alhamwi.256@gmail.com"
-          data-i18n="contact.email"
-          class="skill-badge"
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/ali-alhamwi-72a00a225/"
-          data-i18n="contact.linkedin"
-          class="skill-badge"
-          target="_blank"
-          rel="noopener"
-        ></a>
-        <a
-          href="https://github.com/ALI2ALHMWI"
-          data-i18n="contact.github"
-          class="skill-badge"
-          target="_blank"
-          rel="noopener"
-        ></a>
-        <a
-          href="https://gitlab.com/Ali-Alhamwi"
-          data-i18n="contact.gitlab"
-          class="skill-badge"
-          target="_blank"
-          rel="noopener"
-        ></a>
-      </div>
-    </section>
-
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

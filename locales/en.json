@@ -8,23 +8,40 @@
   },
   "hero": {
     "name": "Ali Alhamwi",
-    "title": "Software Engineer | PHP & Laravel | Backend & REST APIs | MySQL | React | Full-Stack Development",
-    "cta": "View My Work"
+    "eyebrow": "Building reliable web applications from database to production.",
+    "title": "PHP & Laravel Developer",
+    "description": "PHP & Laravel Developer with 2+ years of hands-on experience building and maintaining production-ready web applications, REST APIs, and custom systems for real-world clients.",
+    "projectsCta": "View Projects",
+    "contactCta": "Contact Me"
   },
   "about": {
+    "eyebrow": "ABOUT & SKILLS",
     "heading": "About Me",
-    "text": "Software Engineer specializing in PHP, Laravel, and full-stack web development. I build and maintain production-ready backend systems and REST APIs, with hands-on experience across three live Laravel + Filament applications. I also work with React, JavaScript, and modern frontend tools to create complete, responsive web experiences."
+    "text1": "I’m a PHP & Laravel Developer with 2+ years of hands-on experience building and maintaining production-ready web applications for real clients.",
+    "text2": "My main focus is backend and full-stack web development with PHP, Laravel, MySQL, REST APIs, and modern web technologies. I enjoy turning business requirements into reliable, maintainable systems — from database design and authentication to admin dashboards, APIs, integrations, and deployment.",
+    "text3": "I have worked on real-world projects across different business needs, including content management systems, e-commerce-related platforms, property and service management, and custom internal systems. My experience goes beyond writing code; I also work with Git, GitHub/GitLab, SEO, performance optimization, hosting, and production deployment.",
+    "text4": "Since 2024, I have been continuously developing my Laravel expertise through real client projects and production applications.",
+    "text5": "I’m currently expanding my full-stack skill set through the Byts4Future program, where I’m working with React, TypeScript, Node.js, Express, MongoDB, Next.js, and React Native, alongside problem solving, communication, English, and teamwork.",
+    "text6": "My goal is to grow into a well-rounded Junior Full-Stack Developer, combining my practical Laravel experience with modern JavaScript technologies to build complete, production-ready web and mobile applications.",
+    "metrics": {
+      "production": "Years of hands-on Laravel experience",
+      "projects": "Building with Laravel since 2024",
+      "bilingual": "Primary professional stack with Laravel and MySQL"
+    }
   },
   "skills": {
-    "heading": "Skills",
-    "backend": "Backend",
+    "eyebrow": "SKILL HIERARCHY",
+    "heading": "My Skills",
+    "primary": "Primary Stack",
     "frontend": "Frontend",
-    "database": "Database"
+    "backendTools": "Backend & Tools",
+    "expanding": "Currently Expanding"
   },
   "projects": {
-    "heading": "Projects",
+    "eyebrow": "PRODUCTION-READY WEB APPLICATIONS",
+    "heading": "Featured Projects",
     "subheading": "A selection of production applications I've built and maintained.",
-    "viewProject": "View Project →",
+    "liveDemo": "Live Demo",
     "confidential": "Private project",
     "items": {
       "milano": {
@@ -44,9 +61,27 @@
         "description": "A production-ready system for a law firm to manage employees, cases, and internal communication. Features case tracking with review reminders, private per-case chat rooms, granular role-based permissions, employee activity logging, and Google Drive integration for document storage."
       }
     }
-    
+  },
+  "stack": {
+    "eyebrow": "DEVELOPER TOOLKIT",
+    "heading": "Building Toward Full-Stack Readiness",
+    "cards": {
+      "backend": {
+        "title": "Laravel Backend Systems",
+        "text": "Production-ready PHP and Laravel applications, REST APIs, authentication flows, MySQL databases, and admin dashboards."
+      },
+      "frontend": {
+        "title": "Practical Frontend Work",
+        "text": "Responsive HTML, CSS, JavaScript, and React interfaces connected to real backend systems and client requirements."
+      },
+      "data": {
+        "title": "Currently Expanding",
+        "text": "Developing toward a Junior Full-Stack Developer role through Byts4Future, with TypeScript, Node.js, Express, MongoDB, Next.js, and React Native."
+      }
+    }
   },
   "contact": {
+    "eyebrow": "CONTACT",
     "heading": "Get In Touch",
     "text": "Feel free to reach out — I'm always open to discussing new projects and opportunities.",
     "email": "Email",
